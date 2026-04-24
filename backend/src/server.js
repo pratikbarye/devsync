@@ -19,7 +19,11 @@ const __dirname = path.resolve();
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://devsync.vercel.app", // (we will use later)
+    ],
     credentials: true,
   })
 );
