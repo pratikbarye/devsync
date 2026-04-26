@@ -8,9 +8,15 @@ import { getDifficultyBadgeClass } from "../lib/utils";
 function ProblemsPage() {
   const problems = Object.values(PROBLEMS);
 
-  const easyProblemsCount = problems.filter((p) => p.difficulty === "Easy").length;
-  const mediumProblemsCount = problems.filter((p) => p.difficulty === "Medium").length;
-  const hardProblemsCount = problems.filter((p) => p.difficulty === "Hard").length;
+  const easyProblemsCount = problems.filter(
+    (p) => p.difficulty === "Easy"
+  ).length;
+  const mediumProblemsCount = problems.filter(
+    (p) => p.difficulty === "Medium"
+  ).length;
+  const hardProblemsCount = problems.filter(
+    (p) => p.difficulty === "Hard"
+  ).length;
 
   return (
     <div className="min-h-screen bg-base-200">
@@ -44,14 +50,23 @@ function ProblemsPage() {
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
                           <h2 className="text-xl font-bold">{problem.title}</h2>
-                          <span className={`badge ${getDifficultyBadgeClass(problem.difficulty)}`}>
+                          <span
+                            className={`badge ${getDifficultyBadgeClass(
+                              problem.difficulty
+                            )}`}
+                          >
                             {problem.difficulty}
                           </span>
                         </div>
-                        <p className="text-sm text-base-content/60"> {problem.category}</p>
+                        <p className="text-sm text-base-content/60">
+                          {" "}
+                          {problem.category}
+                        </p>
                       </div>
                     </div>
-                    <p className="text-base-content/80 mb-3">{problem.description.text}</p>
+                    <p className="text-base-content/80 mb-3">
+                      {problem.description.text}
+                    </p>
                   </div>
                   {/* RIGHT SIDE */}
 
@@ -76,11 +91,15 @@ function ProblemsPage() {
 
               <div className="stat">
                 <div className="stat-title">Easy</div>
-                <div className="stat-value text-success">{easyProblemsCount}</div>
+                <div className="stat-value text-success">
+                  {easyProblemsCount}
+                </div>
               </div>
               <div className="stat">
                 <div className="stat-title">Medium</div>
-                <div className="stat-value text-warning">{mediumProblemsCount}</div>
+                <div className="stat-value text-warning">
+                  {mediumProblemsCount}
+                </div>
               </div>
               <div className="stat">
                 <div className="stat-title">Hard</div>
