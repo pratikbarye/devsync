@@ -25,16 +25,19 @@ export async function executeCode(language, code) {
     }
 
     // const response = await fetch(`${PISTON_API}/execute`, {
-    const response = await fetch("http://localhost:3000/api/code/execute", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        language: languageConfig.language,
-        code: code,
-      }),
-    });
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/code/execute`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          language: languageConfig.language,
+          code: code,
+        }),
+      }
+    );
 
     if (!response.ok) {
       return {
