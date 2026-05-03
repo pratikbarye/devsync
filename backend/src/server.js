@@ -22,7 +22,8 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:5174",
-      "https://devsync.vercel.app", 
+      "https://devsync.vercel.app",
+      "https://*.vercel.app",
     ],
     credentials: true,
   })
